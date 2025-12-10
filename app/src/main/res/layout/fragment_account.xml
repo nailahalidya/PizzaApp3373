@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AccountFragment">
+    tools:context=".AccountActivity">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -14,4 +14,14 @@
         android:textSize="30dp"
         android:textStyle="bold"
         android:textAlignment="center"/>
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:backgroundTint="@color/red"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Log in"
+        android:textSize="18dp" />
 </FrameLayout>

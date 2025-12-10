@@ -1,10 +1,16 @@
-package com.example.pizzaapp3373
+package com.example.pizzaapp3338
 
+import android.app.NotificationManager
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
+import com.example.pizzaapp3373.BaseApplication
+import com.example.pizzaapp3373.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -17,6 +23,8 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class AccountFragment : Fragment() {
+    private lateinit var notificationManager: NotificationManagerCompat
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -36,6 +44,30 @@ class AccountFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_account, container, false)
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        notificationManager = NotificationManagerCompat.from(view.context)
+
+        //instance
+        val buttonSave = view.findViewById<Button>(R.id.buttonSave)
+        //event
+        buttonSave.setOnClickListener {
+            val title = "Change Account"
+            val message = "You have changed your account data"
+
+            val builder = NotificationCompat.Builder(view.context,
+                BaseApplication.CHANNEL_1_ID)
+                .setSmallIcon(R.drawable.outline_account_circle_24)
+                .setContentTitle(title)
+                .setContentText(message)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+            val notification = builder.build()
+//            notificationManager.notify(1, notification)
+        }
+    }
+
 
     companion object {
         /**

@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
+import com.example.pizzaapp3338.AccountFragment
 
 
 class HomeActivity : AppCompatActivity() {
@@ -40,17 +41,17 @@ class HomeActivity : AppCompatActivity() {
 
         //event txtMenuPizza click
         txtMenu.setOnClickListener {
-            replaceFragment(AccountFragment())
+            replaceFragment(MenuFragment())
         }
 
         //event txtMenuAccount click
         txtTransaction.setOnClickListener {
-            replaceFragment(AccountFragment())
+            replaceFragment(TransactionFragment())
         }
 
         //event txtMenuAccount click
         txtReport.setOnClickListener {
-            replaceFragment(AccountFragment())
+            replaceFragment(ReportFragment())
         }
     }
 }
