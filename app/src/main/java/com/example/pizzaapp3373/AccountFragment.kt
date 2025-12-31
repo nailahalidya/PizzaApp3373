@@ -1,4 +1,4 @@
-package com.example.pizzaapp3338
+package com.example.pizzaapp3373
 
 import android.app.NotificationManager
 import android.os.Bundle
@@ -10,7 +10,6 @@ import android.widget.Button
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.example.pizzaapp3373.BaseApplication
-import com.example.pizzaapp3373.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -50,21 +49,23 @@ class AccountFragment : Fragment() {
         notificationManager = NotificationManagerCompat.from(view.context)
 
         //instance
-        val buttonSave = view.findViewById<Button>(R.id.buttonSave)
+        val buttonSave = view.findViewById<Button>(R.id.button)
         //event
         buttonSave.setOnClickListener {
             val title = "Change Account"
             val message = "You have changed your account data"
 
-            val builder = NotificationCompat.Builder(view.context,
-                BaseApplication.CHANNEL_1_ID)
+            val builder = NotificationCompat.Builder(
+                view.context,
+                BaseApplication.CHANNEL_1_ID
+            )
                 .setSmallIcon(R.drawable.outline_account_circle_24)
                 .setContentTitle(title)
                 .setContentText(message)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
             val notification = builder.build()
-//            notificationManager.notify(1, notification)
+            //notificationManager.notify(1, notification)
         }
     }
 

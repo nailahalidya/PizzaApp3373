@@ -1,20 +1,28 @@
 package com.example.pizzaapp3373
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class LoginActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_login)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        // Ambil button LOGIN (ID hanya milik Button, bukan root layout)
+        val buttonLogin = findViewById<Button>(R.id.buttonLogin)
+
+        buttonLogin.setOnClickListener {
+            // Pindah ke HomeActivity
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+            var user = txtUsername.text.toString().trim()
+            var pwd = txtPassword.text.toString.trim()
+
+            // Supaya tidak bisa kembali ke login
+            finish()
         }
     }
 }

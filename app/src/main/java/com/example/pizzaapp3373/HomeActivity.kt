@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
-import com.example.pizzaapp3338.AccountFragment
+import com.example.pizzaapp3373.AccountFragment
 
 
 class HomeActivity : AppCompatActivity() {
